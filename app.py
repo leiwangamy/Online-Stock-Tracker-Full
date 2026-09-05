@@ -4840,4 +4840,6 @@ def strong_stock_monitor():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=3000)
+    # Full archive default 3001 so it can run beside the daily project on 3000.
+    _port = int(os.environ.get("LEIBOT_PORT", "3001"))
+    app.run(host="0.0.0.0", port=_port)
