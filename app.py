@@ -5513,6 +5513,7 @@ def strong_stock_monitor():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("LEIBOT_PORT") or os.environ.get("PORT") or "3000")
+    # Full archive default 3001 so it can run beside the daily project on 3000.
+    port = int(os.environ.get("LEIBOT_PORT") or os.environ.get("PORT") or "3001")
     # threaded=True so a slow Group Movement (ALL) load cannot freeze the whole UI.
     app.run(host="0.0.0.0", port=port, use_reloader=False, threaded=True)
